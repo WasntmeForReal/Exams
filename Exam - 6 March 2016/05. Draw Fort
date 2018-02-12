@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _10.Diamond
+{
+    class Program
+    {
+        static void Main()
+        {
+            int n = int.Parse(Console.ReadLine());
+
+
+            string towerUP = $"/{new string('^', (n / 2))}\\";
+            string towerDown = $"\\{new string('_', (n / 2))}/";
+            string middle = new string('_', (2 * n) - (2 * (n/2) + 4));
+            string spaces = new string(' ', (2 * n) - (2 * (n / 2) + 4));
+
+            string body = $"|{new string(' ', 2*n - 2)}|";
+
+            Console.WriteLine(towerUP+middle+towerUP);
+            for (int i = 0; i < n-3; i++)
+            {
+                Console.WriteLine(body);
+            }
+            Console.WriteLine($"|{new string(' ',n/2+1)}{middle}{new string(' ',n/2+1)}|");
+            Console.WriteLine(towerDown + spaces + towerDown);
+
+
+
+        }
+    }
+}
